@@ -19,5 +19,7 @@ char menu()
     std::cout << "Enter your choice: ";
     std::cin >> choice;
 
-    return choice;
+    std::cout << "You chose option " << choice << ".\n";
+
+    return 0;
 }
