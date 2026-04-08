@@ -3,4 +3,6 @@
 
 #pragma once
 
-void banner();
+#include <sstream>
+
+std::stringstream banner();

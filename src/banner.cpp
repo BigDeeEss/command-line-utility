@@ -3,8 +3,8 @@
 
 #include <banner.hpp>
 
-#include <iostream>
-
-void banner() {
-    std::cout << "Welcome to the Command Line Utility!\n";
+std::stringstream banner() {
+    std::stringstream ss;
+    ss << "Welcome to the Command Line Utility!\n";
+    return ss;
 }
