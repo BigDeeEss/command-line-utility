@@ -1,21 +1,24 @@
-# Add main executable
 add_executable(
-    CommandLineUtility
-    banner.cpp
-    main.cpp
-    menu.cpp
+    TstCommandLineUtility
+    tst_banner.cpp
+    tst_main.cpp
 )
 
 # Include directories for the target
 target_include_directories(
-    CommandLineUtility
+    TstCommandLineUtility
     PRIVATE
     $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
+)
+
+target_link_libraries(
+    TstCommandLineUtility
+    PRIVATE
+    GTest::gtest_main
 )
 
 # Install the executable to the appropriate directory
 install(
-    TARGETS CommandLineUtility
+    TARGETS TstCommandLineUtility
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
