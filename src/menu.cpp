@@ -1,10 +1,15 @@
+/// @file menu.cpp
+/// @brief Implements a menu function: displays a menu and gets choice from user
+
 #include <iostream>
 
 #include <menu.hpp>
 
+/// @brief Displays a menu and gets choice from user
+/// @return Choice as entered by user
 char menu()
 {
-    int choice{};
+    char choice{};
 
     std::cout << "Menu:\n";
     std::cout << "1. Option 1\n";

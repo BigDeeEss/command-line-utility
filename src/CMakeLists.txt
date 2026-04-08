@@ -7,7 +7,6 @@ add_executable(
     menu.cpp
 )
 
-# message(FATAL_ERROR "CMAKE_CURRENT_SOURCE_DIR: ${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(
     CommandLineUtility
     PRIVATE

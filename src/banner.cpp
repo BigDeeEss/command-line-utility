@@ -1,3 +1,6 @@
+/// @file banner.cpp
+/// @brief Implements a banner function: displays a welcome message
+
 #include <banner.hpp>
 
 #include <iostream>
