@@ -1,17 +1,27 @@
-# Add main executable
-add_executable(
-    CommandLineUtility
+add_library(
+    CommandLineUtilityLib
     banner.cpp
-    main.cpp
     menu.cpp
 )
 
 # Include directories for the target
 target_include_directories(
-    CommandLineUtility
+    CommandLineUtilityLib
     PRIVATE
     $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
+)
+
+# Add main executable
+add_executable(
+    CommandLineUtility
+    main.cpp
+)
+
+target_link_libraries(
+    CommandLineUtility
+    PRIVATE
+    CommandLineUtilityLib::CommandLineUtilityLib
 )
 
 # Install the executable to the appropriate directory
