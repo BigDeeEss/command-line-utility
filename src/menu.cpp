@@ -21,5 +21,5 @@ char menu()
 
     std::cout << "You chose option " << choice << ".\n";
 
-    return 0;
+    return choice;
 }

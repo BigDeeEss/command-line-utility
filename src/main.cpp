@@ -16,7 +16,7 @@ int main()
     // Print menu and get user choice
     char choice{menu()};
 
-
+    std::cout << choice << " was selected.\n";
 
     return 0;
 }
