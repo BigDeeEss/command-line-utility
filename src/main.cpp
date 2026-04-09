@@ -18,5 +18,9 @@ int main()
 
     std::cout << choice << " was selected.\n";
 
+    char choice2{Menu().getValidChoice()};
+
+    std::cout << choice2 << " was selected.\n";
+
     return 0;
 }
