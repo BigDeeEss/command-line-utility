@@ -14,7 +14,7 @@ include(cmake/flags.cmake)
 # Add source directory
 add_subdirectory(src)
 
-# Add tests if GTEST is available
-if(GTEST)
+# Add tests if Debug build
+if (CMAKE_BUILD_TYPE STREQUAL "Debug")
     add_subdirectory(tst)
 endif()
