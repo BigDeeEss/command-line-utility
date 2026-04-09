@@ -3,5 +3,9 @@
     "files.exclude": {
         "**/build": true,
         "**/install": true
-    }
+    },
+    "editor.rulers": [
+        80
+    ],
+    "C_Cpp.clang_format_style": "{BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 80, MaxColumnLimit: 80, MaxEmptyLinesToKeep: 4, SortIncludes: false, AlignAfterOpenBracket: DontAlign}"
 }

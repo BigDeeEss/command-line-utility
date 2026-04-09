@@ -1,44 +1,14 @@
 /// @file menu.cpp
-/// @brief Implements a menu function: displays a menu and gets choice from user
+/// @brief Implements a Menu class that displays options and gets a valid choice
+/// from user
 
 #include <iostream>
 
-#include <menu.hpp>
+#include "menu.hpp"
 
-/// @brief Displays a menu and gets choice from user
-/// @param input Input stream to read user choice from
-/// @return Choice as entered by user
-char menu(std::istream &input)
-{
-    char choice{0};
 
-    bool validChoice{false};
-    while (!validChoice)
-    {
-        std::cout << "Menu:\n";
-        std::cout << "1. Option 1\n";
-        std::cout << "2. Option 2\n";
-        std::cout << "3. Option 3\n";
-        std::cout << "4. Exit\n";
-        std::cout << "Enter your choice: ";
-        input >> choice;
-        if (choice >= '1' && choice <= '4')
-        {
-            validChoice = true;
-        }
-        else
-        {
-            std::cout << "Invalid choice. Please try again.\n";
-        }
-    }
-
-    std::cout << "You chose option " << choice << ".\n";
-
-    return choice;
-}
-
-void Menu::display() const
-{
+/// @brief Displays menu options to user
+void Menu::display() const {
     std::cout << "Menu:\n";
     std::cout << "1. Option 1\n";
     std::cout << "2. Option 2\n";
@@ -47,34 +17,44 @@ void Menu::display() const
     std::cout << "Enter your choice: ";
 }
 
-std::pair<char, bool> Menu::getChoice(std::istream &input) const
-{
+
+
+
+/// @brief Gets a menu choice from user
+/// @param input Input stream to read user choice from
+/// @return The menu choice
+std::pair<char, bool> Menu::getChoice(std::istream& input) const {
     char choice{0};
 
+    // Read user input
     input >> choice;
-    if (choice >= '1' && choice <= '4')
-    {
+
+    // Validate user input, returning choice and either true or false
+    if (choice >= '1' && choice <= '4') {
         return std::pair(choice, true);
-    }
-    else
-    {
+    } else {
         return std::pair(choice, false);
     }
 }
 
-char Menu::getValidChoice() const
-{
-    bool validChoice{false};
-    while (!validChoice)
-    {
+
+
+
+/// @brief Gets a valid menu choice from user
+/// @return The valid menu choice
+char Menu::getValidChoice() const {
+    // Loop until a valid choice is made
+    while (true) {
+        // Display menu
         display();
-        auto [choice, isValid] = getChoice(std::cin);
-        if (isValid)
-        {
+
+        // Get user choice and whether it is valid
+        auto [choice, validChoice] = getChoice(std::cin);
+
+        // If valid, return choice, otherwise print error and loop again
+        if (validChoice) {
             return choice;
-        }
-        else
-        {
+        } else {
             std::cout << "Invalid choice. Please try again.\n";
         }
     }
