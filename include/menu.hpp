@@ -10,7 +10,7 @@
 /// @brief Declares a Menu class that displays options and gets a valid choice
 /// from user
 class Menu {
-   public:
+  public:
     Menu() = default;
 
     ~Menu() = default;

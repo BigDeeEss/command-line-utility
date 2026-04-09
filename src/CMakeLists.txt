@@ -2,9 +2,19 @@
 # Add CommandLineUtilityLib library for use with CommandLineUtility executable and tests
 add_library(
     CommandLineUtilityLib
+    STATIC
+)
+
+# Add source files to CommandLineUtilityLib
+target_sources(
+    CommandLineUtilityLib
+    PUBLIC
     banner.cpp
     menu.cpp
 )
+
+# Add additional source files to CommandLineUtilityLib
+add_subdirectory(bmi_calculator)
 
 # Include directories for the target
 # Use PUBLIC so that they are visible to linked lbraries
