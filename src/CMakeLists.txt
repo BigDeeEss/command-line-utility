@@ -1,3 +1,5 @@
+# CMakeLists.txt for CommandLineUtilityLib and CommandLineUtility
+# Add CommandLineUtilityLib library for use with CommandLineUtility executable and tests
 add_library(
     CommandLineUtilityLib
     banner.cpp
@@ -5,9 +7,10 @@ add_library(
 )
 
 # Include directories for the target
+# Use PUBLIC so that they are visible to linked lbraries
 target_include_directories(
     CommandLineUtilityLib
-    PRIVATE
+    PUBLIC
     $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
 )
@@ -18,10 +21,12 @@ add_executable(
     main.cpp
 )
 
+# Link CommandLineUtilityLib library to CommandLineUtility executable
+# This line also brings in the includes
 target_link_libraries(
     CommandLineUtility
     PRIVATE
-    CommandLineUtilityLib::CommandLineUtilityLib
+    CommandLineUtilityLib
 )
 
 # Install the executable to the appropriate directory

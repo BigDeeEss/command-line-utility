@@ -1,16 +1,13 @@
+# CMakeLists.txt for CommandLineUtility tests
+# Add TstCommandLineUtility executable for testing CommandLineUtilityLib
 add_executable(
     TstCommandLineUtility
     tst_banner.cpp
     tst_main.cpp
 )
 
-# Include directories for the target
-target_include_directories(
-    TstCommandLineUtility
-    PRIVATE
-    $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
-)
-
+# Link CommandLineUtilityLib library to TstCommandLineUtility executable
+# This line also brings in the includes
 target_link_libraries(
     TstCommandLineUtility
     PRIVATE
