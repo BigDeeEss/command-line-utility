@@ -21,7 +21,7 @@ int main() {
         std::cout << "Option " << choice << " was selected.\n";
         switch (choice) {
             case '1':
-                BmiCalculator::calculate();
+                BMICalculator::calculate();
                 break;
             case '4':
                 std::cout << "Exiting program.\n";
