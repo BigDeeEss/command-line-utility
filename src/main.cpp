@@ -14,7 +14,7 @@ int main()
     std::cout << banner().str();
 
     // Print menu and get user choice
-    char choice{menu()};
+    char choice{menu(std::cin)};
 
     std::cout << choice << " was selected.\n";
 

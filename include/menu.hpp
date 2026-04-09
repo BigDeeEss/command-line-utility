@@ -3,6 +3,9 @@
 
 #pragma once
 
-/// @brief Displays a menu and gets choice from user
+#include <istream>
+
+/// @brief Displays a menu and gets choice from user    
+/// @param input Input stream to read user choice from
 /// @return Choice as entered by user
-char menu();
+char menu(std::istream& input);

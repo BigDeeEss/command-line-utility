@@ -4,6 +4,7 @@ add_executable(
     TstCommandLineUtility
     tst_banner.cpp
     tst_main.cpp
+    tst_menu.cpp
 )
 
 # Link CommandLineUtilityLib library to TstCommandLineUtility executable
