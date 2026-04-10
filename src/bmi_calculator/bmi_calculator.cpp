@@ -7,12 +7,14 @@
 
 
 /// @brief Calculates BMI from user input for weight and height
-void BMICalculator::calculateBMI() {
+/// @return The calculated BMI value
+double BMICalculator::calculateBMI() {
+    // Get weight and height from user
     double weight{getValueFromUser(std::string{"Enter weight in kilograms: "})};
     double height{getValueFromUser(std::string{"Enter height in meters: "})};
 
     // Calculate BMI
-    mBMI = weight / (height * height);
+    return weight / (height * height);
 }
 
 
@@ -22,13 +24,18 @@ void BMICalculator::calculateBMI() {
 /// @param prompt The message to display to the user when asking for input
 /// @return The validated user input
 double BMICalculator::getValueFromUser(const std::string& prompt) const {
+    // Prompt user for input
+    // mOutput is an instance of sd::cout or std::stringstream for testing
+    mOutput << prompt;
+
+    // Read user input
     double value{0.0};
-    std::cout << prompt;
     mInput >> value;
 
     // Validate user input
     if (value <= 0) {
-        std::cout << "Invalid input. Value must be a positive number.\n";
+        // mOutput is an instance of sd::cout or std::stringstream for testing
+        mOutput << "Invalid input. Value must be a positive number.\n";
 
         // Recursively call getValueFromUser until valid input is received
         return getValueFromUser(prompt);

@@ -7,5 +7,8 @@
     "editor.rulers": [
         80
     ],
-    "C_Cpp.clang_format_style": "{BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 80, MaxColumnLimit: 80, MaxEmptyLinesToKeep: 4, SortIncludes: false, AlignAfterOpenBracket: DontAlign, AccessModifierOffset: -2}"
+    "C_Cpp.clang_format_style": "{BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 80, MaxColumnLimit: 80, MaxEmptyLinesToKeep: 4, SortIncludes: false, AlignAfterOpenBracket: DontAlign, AccessModifierOffset: -2}",
+    "editor.minimap.scale": 1,
+    "editor.minimap.autohide": "scroll"
+
 }

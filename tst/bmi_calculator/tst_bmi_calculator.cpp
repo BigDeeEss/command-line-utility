@@ -8,7 +8,8 @@
 /// @brief Tests the calculation of BMI with valid input
 TEST(BMICalculator2Test, TestCalculateBMIWithValidInput) {
     std::stringstream input("70\n1.75\n");
-    BMICalculator calculator(input);
+    std::stringstream output;
+    BMICalculator calculator(input, output);
 
     EXPECT_DOUBLE_EQ(calculator.get(), 22.857142857142858);
 }
@@ -17,7 +18,9 @@ TEST(BMICalculator2Test, TestCalculateBMIWithValidInput) {
 /// @brief Tests the calculation of BMI with valid input
 TEST(BMICalculator2Test, TestCalculateBMIWithNonValidInput) {
     std::stringstream input("-1.0\n70\n-2.0\n1.75\n");
-    BMICalculator calculator(input);
+    std::stringstream output;
+    BMICalculator calculator(input, output);
+    // BMICalculator calculator(input);
 
     EXPECT_DOUBLE_EQ(calculator.get(), 22.857142857142858);
 }
