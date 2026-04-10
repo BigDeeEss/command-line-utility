@@ -10,7 +10,7 @@
 /// @brief Displays menu options to user
 void Menu::display() const {
     std::cout << "Menu:\n";
-    std::cout << "1. Option 1\n";
+    std::cout << "1. Calculate BMI\n";
     std::cout << "2. Option 2\n";
     std::cout << "3. Option 3\n";
     std::cout << "4. Exit\n";

@@ -8,7 +8,7 @@ add_library(
 # Add source files to CommandLineUtilityLib
 target_sources(
     CommandLineUtilityLib
-    PUBLIC
+    PRIVATE
     banner.cpp
     menu.cpp
 )
@@ -23,6 +23,13 @@ target_include_directories(
     PUBLIC
     $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
+)
+
+install(
+    TARGETS CommandLineUtilityLib
+    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
 
 # Add main executable

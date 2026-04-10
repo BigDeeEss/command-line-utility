@@ -2,10 +2,19 @@
 # Add TstCommandLineUtility executable for testing CommandLineUtilityLib
 add_executable(
     TstCommandLineUtility
+)
+
+# Add source files to TstCommandLineUtility
+target_sources(
+    TstCommandLineUtility
+    PRIVATE
     tst_banner.cpp
     tst_main.cpp
     tst_menu.cpp
 )
+
+# Add additional source files to TstCommandLineUtility
+add_subdirectory(bmi_calculator)
 
 # Link CommandLineUtilityLib library to TstCommandLineUtility executable
 # This line also brings in the includes
