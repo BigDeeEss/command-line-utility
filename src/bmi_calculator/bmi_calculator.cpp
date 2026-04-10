@@ -1,28 +1,45 @@
-
+/// @file bmi_calculator2.cpp
+/// @brief Implements BMICalculator class which calculates Body Mass Index
+/// (BMI)
 #include <iostream>
 
 #include "bmi_calculator/bmi_calculator.hpp"
 
-void BMICalculator::calculate() {
-    double weight{0.0};
-    double height{0.0};
 
-    // Get user input for weight and height
-    std::cout << "Enter weight in kilograms: ";
-    std::cin >> weight;
-    std::cout << "Enter height in meters: ";
-    std::cin >> height;
-
-    // Validate user input
-    if (weight <= 0 || height <= 0) {
-        std::cout
-            << "Invalid input. Weight and height must be positive numbers.\n";
-        return;
-    }
+/// @brief Calculates BMI from user input for weight and height
+void BMICalculator::calculateBMI() {
+    double weight{getValueFromUser(std::string{"Enter weight in kilograms: "})};
+    double height{getValueFromUser(std::string{"Enter height in meters: "})};
 
     // Calculate BMI
-    double bmi = weight / (height * height);
-
-    // Print BMI result
-    std::cout << "Your BMI is: " << bmi << "\n";
+    mBMI = weight / (height * height);
 }
+
+
+
+
+/// @brief Prompts user for input and validates that it's a positive number
+/// @param prompt The message to display to the user when asking for input
+/// @return The validated user input
+double BMICalculator::getValueFromUser(const std::string& prompt) const {
+    double value{0.0};
+    std::cout << prompt;
+    mInput >> value;
+
+    // Validate user input
+    if (value <= 0) {
+        std::cout << "Invalid input. Value must be a positive number.\n";
+
+        // Recursively call getValueFromUser until valid input is received
+        return getValueFromUser(prompt);
+    }
+
+    return value;
+}
+
+
+
+
+/// @brief Returns the calculated BMI value
+/// @return The calculated BMI value
+double BMICalculator::get() const { return mBMI; }

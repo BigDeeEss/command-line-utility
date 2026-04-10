@@ -4,7 +4,7 @@
 #include <iostream>
 
 #include "banner.hpp"
-#include "bmi_calculator/bmi_calculator2.hpp"
+#include "bmi_calculator/bmi_calculator.hpp"
 #include "menu.hpp"
 
 
@@ -21,7 +21,7 @@ int main() {
         std::cout << "Option " << choice << " was selected.\n";
         switch (choice) {
             case '1': {
-                BMICalculator2 calculator(std::cin);
+                BMICalculator calculator(std::cin);
                 std::cout << "Your BMI is: " << calculator.get() << "\n";
                 break;
             }
