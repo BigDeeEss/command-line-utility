@@ -15,6 +15,8 @@ TEST(BMICalculator2Test, TestCalculateBMIWithValidInput) {
 }
 
 
+
+
 /// @brief Tests the calculation of BMI with valid input
 TEST(BMICalculator2Test, TestCalculateBMIWithNonValidInput) {
     std::stringstream input("-1.0\n70\n-2.0\n1.75\n");
